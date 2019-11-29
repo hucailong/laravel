@@ -10,20 +10,19 @@
 <body>
 <table border="1">
     <tr>
-        <td>ID</td>
-        <td>姓名</td>
-        <td>年龄</td>
+        <td>学生姓名</td>
         <td>班级</td>
+        <td>简介</td>
+        <td>编辑</td>
     </tr>
     @foreach($data as $v)
     <tr>
-        <td>{{$v->student_id}}</td>
-        <td>{{$v->student_name}}</td>
-        <td>{{$v->student_age}}</td>
-        <td>{{$v->student_class}}</td>
+        <td>{{$v->stu_name}}</td>
+        <td>{{$v->class_name}}</td>
+        <td>{{$v->stu_desc}}</td>
+        <td><a href="{{url('/update/')}}/{{$v->stu_id}}">修改</a></td>
     </tr>
-    @endforeach
-    {{$data->links()}}
+        @endforeach
 </table>
 </body>
 </html>
